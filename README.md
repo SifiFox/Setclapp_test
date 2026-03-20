@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Setclapp - Тестовое задание
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение представляет собой таблицу с CRUD-операциями, поиском и сортировкой, реализованное на React + TypeScript + Vite + Ant Design.
 
-Currently, two official plugins are available:
+**[Демо на GitHub Pages](https://sififox.github.io/Setclapp_test/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Стек
 
-## React Compiler
+- **React 19** + **TypeScript**
+- **Ant Design 6** - UI-компоненты, таблица, модальное окно, формы
+- **Vite** - сборщик
+- **dayjs** - работа с датами
+- **uuid** - генерация уникальных ID
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Требования тестового задания
 
-## Expanding the ESLint configuration
+### Обязательные
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [x] Таблица с колонками: Имя, Дата, Числовое значение, Действия
+- [x] Кнопка "Добавить" над таблицей, вызывающая модальное окно с полями формы
+- [x] Валидация полей перед добавлением строки
+- [x] Добавление строки в таблицу после подтверждения формы
+- [x] Кнопка "Редактировать" в колонке действий - открывает модальное окно, заполненное данными строки
+- [x] Применение изменений из модального окна редактирования к соответствующей строке
+- [x] Кнопка "Удалить" в колонке действий - удаляет строку из таблицы
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Дополнительные
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [x] Использована библиотека Ant Design
+- [x] Сортировка по всем колонкам с учётом типа значения (строка, дата, число)
+- [x] Поиск по всем ячейкам таблицы (имя, дата, числовое значение) с debounce
+- [x] Поле поиска расположено над таблицей
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Дополнительно реализовано
+
+- [x] Сохранение данных таблицы в `localStorage` - данные не теряются при перезагрузке страницы
+- [x] Синхронизация поискового запроса с URL-параметром `?search=` - поиск сохраняется при копировании ссылки и работает при навигации назад/вперёд
+- [x] Lazy-загрузка модального окна - не попадает в начальный бандл
+- [x] Автоматический деплой на GitHub Pages через GitHub Actions при пуше в `main`
+
+## Запуск
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Сборка
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
