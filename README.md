@@ -50,3 +50,16 @@ npm run dev
 ```bash
 npm run build
 ```
+## Search
+<img width="1174" height="411" alt="image" src="https://github.com/user-attachments/assets/ecb4c6fe-a219-42bd-b467-bb04bf87fca6" />
+<img width="1186" height="498" alt="image" src="https://github.com/user-attachments/assets/877b3770-ffd0-4c6e-a917-713f8eb6b2b4" />
+
+## Sort
+<img width="955" height="478" alt="image" src="https://github.com/user-attachments/assets/fb3e35a6-2d81-43cd-944d-53916ecae7a4" />
+
+## Edit
+<img width="947" height="481" alt="image" src="https://github.com/user-attachments/assets/78934a18-f74c-47f9-9ea3-bd150b143a36" />
+
+## Deleting
+<img width="996" height="472" alt="image" src="https://github.com/user-attachments/assets/c01e1e98-34d7-4ca5-b0db-45bbd68434c7" />
+
